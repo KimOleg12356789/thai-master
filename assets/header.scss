@@ -1,0 +1,148 @@
+@use '/assets/breakpoints.scss';
+
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+	background: linear-gradient(360deg, rgba(13, 6, 38, 0) 0%, #0d0626 100%);
+  &__row {
+    display: flex;
+    justify-content: space-between;
+		align-items: center;
+		height: 110px;
+  }
+	
+	@media (max-width:1199px) {
+		&__menu {
+			position: fixed;
+			top: 0;
+			right: 0;
+			transform: translateX(100%);
+			padding: 70px 60px;
+			background: #fff;
+			transition: .2s;
+			border-radius: 12px;
+			&_active {
+				transform: translateX(0);
+			}
+			&-list {
+				display: grid;
+				gap: 12px;
+				margin: 0 0 60px;
+				padding: 0;
+			}
+			&-item {
+				list-style-type: none;
+			}
+			&-link {
+				display: block;
+				padding: 4px 12px;
+				font-size: 20px;
+			}
+		}
+		&__lang {
+			&-item {
+				padding: 4px 12px;
+				&:nth-child(1) {
+					font-weight: 600;
+				}
+			}
+		}
+	}
+
+  @media (min-width: breakpoints.$xl) {
+		&__burger {
+			display: none;
+		}
+		&__menu {
+			display: flex;
+			gap: 60px;
+			&-list {
+				display: flex;
+				gap: 20px;
+			}
+			&-link {
+				padding: 8px 4px;
+				color: #fff;
+				font-size: var(--font-size-lg);
+			}
+		}
+		&__lang {
+			display: flex;
+			gap: 6px;
+			color: #fff;
+			&-item {
+				color: #fff;
+				font-size: var(--font-size-lg);
+				&:nth-child(1) {
+					font-weight: 600;
+				}
+			}
+		}
+	}
+
+}
+
+
+
+
+.burger {
+	position: relative;
+	width: 26px;
+	height: 20px;
+	cursor: pointer;
+	background: 0;
+	border: 0;
+  padding: 0;
+}
+.burger__line {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	transform: translateY(-50%);
+	width: 100%;
+	height: 2px;
+  font-size: 0;
+	background: #fff;
+	border-radius: 12px;
+	&:before {
+		content: "";
+		position: absolute;
+		left: 0;
+		width: inherit;
+		height: inherit;
+		background: #fff;
+		border-radius: inherit;
+		transition: 0.2s;
+		top: -8px;
+	}
+	&:after {
+		content: "";
+		position: absolute;
+		left: 0;
+		width: inherit;
+		height: inherit;
+		background: #fff;
+		border-radius: inherit;
+		transition: 0.2s;
+		bottom: -8px;
+	}
+}
+.burger_active {
+	z-index: 100;
+	.burger__line {
+		background: transparent;
+		&:before {
+			top: 0;
+			transform: rotate(45deg);
+			background: var(--c-blue-700);
+		}
+		&:after {
+			bottom: 0;
+			transform: rotate(-45deg);
+			background: var(--c-blue-700);
+		}
+	}
+}

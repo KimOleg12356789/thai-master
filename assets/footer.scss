@@ -1,0 +1,54 @@
+@use '/assets/breakpoints.scss';
+
+.footer {
+  background: var(--c-meteorite-400);
+
+  &__row {
+    display: grid;
+    grid-template-columns: 70px 116px;
+    column-gap: 100px;
+    padding: 10px 0 20px;
+    border-top: 1px solid #fff;
+  }
+  &__social {
+    grid-column: 2;
+    display: flex;
+    gap: 4px;
+    margin-top: 10px;
+  }
+  &__menu {
+    display: grid;
+    gap: 10px;
+    &-link {
+      font-size: 14px;
+      line-height: 140%;
+      color: var(--white);
+    }
+  }
+
+  @media (min-width: breakpoints.$md) {
+    &__row {
+      display: flex;
+      gap: 54px;
+    }
+    &__social {
+      gap: 16px;
+      margin-left: auto;
+      &-item {
+        img {
+          width: 40px;
+          height: 40px;
+        }
+      }
+    }
+  }
+  @media (min-width: breakpoints.$lg) {
+    &__row {
+      align-items: center;
+    }
+    &__menu {
+      display: flex;
+      gap: 50px;
+    }
+  }
+}

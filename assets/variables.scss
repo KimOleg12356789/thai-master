@@ -1,0 +1,58 @@
+@use '/assets/breakpoints.scss';
+
+
+:root {
+    --c-meteorite-400: #2E1D72;
+    --c-blue-700: #04224F;
+    --c-black-400: #0d0626;
+    --c-black-900: #000000;
+
+    --c-lliac-100: #e5e3ee;
+    --c-lilac-400: #b09ff4;
+    --c-yellow-400: #f1ed19;
+
+    --c-white-400: #f8f8fc;
+    --white: #ffffff;
+
+    --c-gray: #7a7a7a;
+
+    --c-error: #F04372;
+
+    --border-radius-sm: 6px;
+    --border-radius-md: 10px;
+    --border-radius-lg: 12px;
+    --border-radius-xl: 14px;
+    --border-radius-2xl: 30px;
+    --border-radius-3xl: 40px;
+    --border-radius-4xl: 50px;
+    --border-radius-full: 9999px;
+  
+    --font-size-xs: 10px;
+    --font-size-sm: 12px;
+    --font-size-md: 14px;
+    --font-size-base: 16px;
+    --font-size-lg: 18px;
+    --font-size-xl: 20px;
+    --font-size-xxl: 24px;
+
+    --container-width: 1440px;
+
+
+    --custom-width: calc(100% - 100% / 6 - 10px);
+
+  @media (min-width: breakpoints.$xxxl) {
+        --custom-width: calc(100% - 100% / 4 - 10px);
+    }
+}
+
+
+:root {
+    --color-bg-white-400: var(--c-white-400);
+    --color-bg-meteorite-400: var(--c-meteorite-400);
+
+    --color-text-black-900: var(--c-black-900);
+    --color-text-lliac-400: var(--c-lilac-400);
+    --color-text-white-400: var(--c-white-400);
+
+    --color-border-lliac-100: var(--c-lliac-100);
+}
